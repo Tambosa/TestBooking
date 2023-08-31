@@ -38,6 +38,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":core_network"))
+
     //retrofit
     implementation(Libs.retrofit)
     implementation(Libs.converter_gson)
