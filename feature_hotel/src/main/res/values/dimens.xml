@@ -1,0 +1,10 @@
+<resources>
+    <dimen name="text_size_screen_title">18sp</dimen>
+    <dimen name="text_size_header">22sp</dimen>
+    <dimen name="text_size_price">30sp</dimen>
+    <dimen name="text_size_common">16sp</dimen>
+    <dimen name="text_size_common_small">14sp</dimen>
+
+
+
+</resources>

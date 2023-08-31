@@ -17,6 +17,10 @@ object Libs {
     const val androidx_lifecycle_viewmodel_ktx =
         "androidx.lifecycle:lifecycle-viewmodel-ktx:${LibsVersions.lifecycle_runtime_ktx}"
 
+    //Google Navigation
+    const val navigation_fragment = "androidx.navigation:navigation-fragment-ktx:${LibsVersions.navigation}"
+    const val navigation_ui = "androidx.navigation:navigation-ui-ktx:${LibsVersions.navigation}"
+
     const val material = "com.google.android.material:material:${LibsVersions.material}"
     const val constraint = "androidx.constraintlayout:constraintlayout:${LibsVersions.constraint}"
     const val androidx_appcompat = "androidx.appcompat:appcompat:${LibsVersions.appcompat}"

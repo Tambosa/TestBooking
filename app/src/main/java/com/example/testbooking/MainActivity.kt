@@ -1,30 +1,20 @@
 package com.example.testbooking
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.lifecycleScope
-import com.example.core_network.BookingApi
+import androidx.appcompat.app.AppCompatDelegate
+import com.example.testbooking.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    @Inject
-    lateinit var api: BookingApi
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-    }
-
-    override fun onResume() {
-        super.onResume()
-        lifecycleScope.launch {
-            Log.d("@@@", "\n ${api.getHotel()} ")
-            Log.d("@@@", "\n ${api.getHotelDetails()} ")
-            Log.d("@@@", "\n ${api.getReservation()} ")
-        }
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
     }
 }

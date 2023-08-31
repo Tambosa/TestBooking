@@ -16,3 +16,5 @@ dependencyResolutionManagement {
 rootProject.name = "TestBooking"
 include(":app")
 include(":core_network")
+include(":core_ui")
+include(":feature_hotel")

@@ -8,4 +8,5 @@ object LibsVersions {
     const val ok_http = "4.10.0"
     const val material = "1.9.0"
     const val constraint = "2.1.4"
+    const val navigation = "2.5.3"
 }
