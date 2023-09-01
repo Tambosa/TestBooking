@@ -1,9 +1,11 @@
 object Libs {
     //retrofit
     const val retrofit = "com.squareup.retrofit2:retrofit:${LibsVersions.converter_gson}"
-    const val converter_gson = "com.squareup.retrofit2:converter-gson:${LibsVersions.converter_gson}"
+    const val converter_gson =
+        "com.squareup.retrofit2:converter-gson:${LibsVersions.converter_gson}"
     const val okhttp = "com.squareup.okhttp3:okhttp:${LibsVersions.ok_http}"
-    const val logging_interceptor = "com.squareup.okhttp3:logging-interceptor:${LibsVersions.ok_http}"
+    const val logging_interceptor =
+        "com.squareup.okhttp3:logging-interceptor:${LibsVersions.ok_http}"
 
     //Dagger - Hilt
     const val hilt_android = "com.google.dagger:hilt-android:${LibsVersions.hilt_android_compiler}"
@@ -18,8 +20,16 @@ object Libs {
         "androidx.lifecycle:lifecycle-viewmodel-ktx:${LibsVersions.lifecycle_runtime_ktx}"
 
     //Google Navigation
-    const val navigation_fragment = "androidx.navigation:navigation-fragment-ktx:${LibsVersions.navigation}"
+    const val navigation_fragment =
+        "androidx.navigation:navigation-fragment-ktx:${LibsVersions.navigation}"
     const val navigation_ui = "androidx.navigation:navigation-ui-ktx:${LibsVersions.navigation}"
+
+    //coil
+    const val coil = "io.coil-kt:coil:${LibsVersions.coil}"
+
+    //3rd party
+    const val circle_indicator = "me.relex:circleindicator:${LibsVersions.circle_indicator}"
+    const val whynotimagecarousel = "org.imaginativeworld.whynotimagecarousel:whynotimagecarousel:${LibsVersions.whynotimagecarousel}"
 
     const val material = "com.google.android.material:material:${LibsVersions.material}"
     const val constraint = "androidx.constraintlayout:constraintlayout:${LibsVersions.constraint}"

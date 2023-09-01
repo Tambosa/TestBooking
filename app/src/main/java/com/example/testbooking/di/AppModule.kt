@@ -2,6 +2,8 @@ package com.example.testbooking.di
 
 import com.example.core_network.BookingApi
 import com.example.core_network.Constants
+import com.example.feature_hotel.data.HotelRepoImpl
+import com.example.feature_hotel.domain.HotelRepo
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -28,5 +30,11 @@ object AppModule {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(BookingApi::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideHotelRepo(): HotelRepo {
+        return HotelRepoImpl(provideBookingApi())
     }
 }

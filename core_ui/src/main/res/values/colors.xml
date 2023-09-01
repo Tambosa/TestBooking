@@ -1,10 +1,14 @@
 <resources>
-    <color name="text_black">#000000</color>
-    <color name="text_white">#FFFFFF</color>
-    <color name="text_grey">#828796</color>
+    <color name="text_main">#000000</color>
+    <color name="text_inverse">#FFFFFF</color>
+    <color name="text_light">#828796</color>
     <color name="text_accent">#0D72FF</color>
     <color name="background_transparent_accent">#1A0D72FF</color>
     <color name="background_accent">#0D72FF</color>
     <color name="text_star_rate">#FFA800</color>
     <color name="background_star_rate">#33FFC700</color>
+
+    <color name="background_main">#FFFFFF</color>
+    <color name="background_container">#FBFBFC</color>
+    <color name="shimmer_color">#C2C2C2</color>
 </resources>

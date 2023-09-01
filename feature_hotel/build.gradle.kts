@@ -54,6 +54,15 @@ dependencies {
     implementation (Libs.navigation_fragment)
     implementation (Libs.navigation_ui)
 
+    //coil
+    implementation (Libs.coil)
+
+    //3rd party
+    implementation (Libs.circle_indicator)
+    implementation (Libs.whynotimagecarousel)
+    //shimmer
+    implementation ("com.facebook.shimmer:shimmer:0.5.0")
+
     implementation(Libs.androidx_ktx)
     implementation(Libs.androidx_appcompat)
     implementation(Libs.material)
