@@ -2,6 +2,8 @@ package com.example.testbooking.di
 
 import com.example.core_network.BookingApi
 import com.example.core_network.Constants
+import com.example.feature_booking.data.ReservationRepoImpl
+import com.example.feature_booking.domain.ReservationRepo
 import com.example.feature_hotel.data.HotelRepoImpl
 import com.example.feature_hotel.domain.HotelRepo
 import com.example.feature_hotel_details.data.HotelDetailsRepoImpl
@@ -44,5 +46,11 @@ object AppModule {
     @Singleton
     fun provideHotelDetailsRepo(): HotelDetailsRepo {
         return HotelDetailsRepoImpl(provideBookingApi())
+    }
+
+    @Provides
+    @Singleton
+    fun provideReservationRepo(): ReservationRepo {
+        return ReservationRepoImpl(provideBookingApi())
     }
 }

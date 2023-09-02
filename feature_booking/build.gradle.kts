@@ -1,22 +1,19 @@
 plugins {
-    id(Plugins.android_application)
+    id(Plugins.android_library)
     id(Plugins.android_kotlin)
     id(Plugins.google_daggerHilt)
     id(Plugins.kotlin_kapt)
 }
 
 android {
-    namespace = "com.example.testbooking"
+    namespace = "com.example.feature_booking"
     compileSdk = ConfigData.compileSdkVersion
 
     defaultConfig {
-        applicationId = "com.example.testbooking"
         minSdk = ConfigData.minSdkVersion
-        targetSdk = ConfigData.targetSdkVersion
-        versionCode = ConfigData.versionCode
-        versionName = ConfigData.versionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -43,15 +40,6 @@ android {
 dependencies {
     implementation(project(":core_network"))
     implementation(project(":core_ui"))
-    implementation(project(":feature_hotel"))
-    implementation(project(":feature_hotel_details"))
-    implementation(project(":feature_booking"))
-
-    //retrofit
-    implementation(Libs.retrofit)
-    implementation(Libs.converter_gson)
-    implementation(Libs.okhttp)
-    implementation(Libs.logging_interceptor)
 
     //Dagger - Hilt
     implementation(Libs.hilt_android)
@@ -63,8 +51,17 @@ dependencies {
     implementation(Libs.androidx_lifecycle_runtime_ktx)
 
     //Google Navigation
-    implementation (Libs.navigation_fragment)
-    implementation (Libs.navigation_ui)
+    implementation(Libs.navigation_fragment)
+    implementation(Libs.navigation_ui)
+
+    //adapter delegates
+    implementation(Libs.adapter_delegates)
+    implementation(Libs.adapter_delegates_viewbinding)
+
+    //3rd party
+    implementation(Libs.circle_indicator)
+    implementation(Libs.whynotimagecarousel)
+    implementation(Libs.shimmer)
 
     implementation(Libs.androidx_ktx)
     implementation(Libs.androidx_appcompat)

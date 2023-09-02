@@ -5,10 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.NavDeepLinkRequest
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.core_ui.R
 import com.example.feature_hotel_details.databinding.FragmentHotelDetailsBinding
 import com.example.feature_hotel_details.domain.entity.HotelDetails
 import dagger.hilt.android.AndroidEntryPoint
@@ -85,9 +89,14 @@ class HotelDetailsFragment : Fragment() {
         (activity as AppCompatActivity).supportActionBar?.apply {
             title = arguments?.getString("title")
             setDisplayHomeAsUpEnabled(true)
+            setHomeAsUpIndicator(R.drawable.baseline_arrow_back_24)
         }
     }
 
     private fun navigateDown(position: Int) {
+        val request = NavDeepLinkRequest.Builder
+            .fromUri(resources.getString(R.string.deeplink_booking).toUri())
+            .build()
+        findNavController().navigate(request)
     }
 }
