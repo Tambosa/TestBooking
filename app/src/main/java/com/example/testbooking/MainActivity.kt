@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setupNavController()
+        setSupportActionBar(binding.toolbar)
     }
 
     private fun setupNavController() {

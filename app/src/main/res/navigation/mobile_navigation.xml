@@ -8,8 +8,23 @@
         android:id="@+id/navigation_hotel"
         android:name="com.example.feature_hotel.HotelFragment"
         android:label="@string/title_hotel">
-<!--        <action-->
-<!--            android:id="@+id/action_blankFragment_to_blankFragment2"-->
-<!--            app:destination="@id/blankFragment2" />-->
+        <action
+            android:id="@+id/action_HotelFragment_to_HotelDetailsFragment"
+            app:destination="@id/navigation_hotel_details" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_hotel_details"
+        android:name="com.example.feature_hotel_details.HotelDetailsFragment"
+        android:label="@string/title_hotel">
+        <!--        <action-->
+        <!--            android:id="@+id/action_blankFragment_to_blankFragment2"-->
+        <!--            app:destination="@id/blankFragment2" />-->
+        <argument
+            android:name="title"
+            android:defaultValue="Hotel"
+            app:argType="string"
+            app:nullable="false" />
+        <deepLink app:uri="App://example.app/hotel_details/{title}" />
     </fragment>
 </navigation>

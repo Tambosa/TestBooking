@@ -1,12 +1,14 @@
 package com.example.feature_hotel
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.NavDeepLinkRequest
+import androidx.navigation.fragment.findNavController
 import com.example.core_ui.R
 import com.example.feature_hotel.databinding.FragmentHotelBinding
 import com.example.feature_hotel.domain.entity.Hotel
@@ -41,6 +43,16 @@ class HotelFragment : Fragment() {
 
         observeViewModel()
         viewModel.getHotel()
+        initButton()
+    }
+
+    private fun initButton() {
+        binding.btnBooking.setOnClickListener {
+            val request = NavDeepLinkRequest.Builder
+                .fromUri("${resources.getString(R.string.deeplink_hotel_details)}/${binding.hotelName.text}".toUri())
+                .build()
+            findNavController().navigate(request)
+        }
     }
 
     private fun observeViewModel() {
@@ -61,7 +73,6 @@ class HotelFragment : Fragment() {
     }
 
     private fun renderData(hotel: Hotel) {
-        Log.d("@@@", "@renderData: ")
         val carouselList = mutableListOf<CarouselItem>()
         hotel.imageUrls.forEach {
             carouselList.add(CarouselItem(imageUrl = it))
@@ -79,8 +90,12 @@ class HotelFragment : Fragment() {
             priceForIt.text = hotel.priceForIt
             description.text = hotel.description
         }
+        createChips(hotel.peculiarities)
+    }
+
+    private fun createChips(peculiarities: List<String>) {
         binding.peculiarities.removeAllViews()
-        hotel.peculiarities.forEach {
+        peculiarities.forEach {
             Chip(requireContext()).apply {
                 setChipBackgroundColorResource(R.color.background_container)
                 isCheckable = false

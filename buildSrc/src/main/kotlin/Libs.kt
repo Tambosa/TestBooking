@@ -29,7 +29,9 @@ object Libs {
 
     //3rd party
     const val circle_indicator = "me.relex:circleindicator:${LibsVersions.circle_indicator}"
-    const val whynotimagecarousel = "org.imaginativeworld.whynotimagecarousel:whynotimagecarousel:${LibsVersions.whynotimagecarousel}"
+    const val whynotimagecarousel =
+        "org.imaginativeworld.whynotimagecarousel:whynotimagecarousel:${LibsVersions.whynotimagecarousel}"
+    const val shimmer = "com.facebook.shimmer:shimmer:${LibsVersions.shimmer}"
 
     const val material = "com.google.android.material:material:${LibsVersions.material}"
     const val constraint = "androidx.constraintlayout:constraintlayout:${LibsVersions.constraint}"

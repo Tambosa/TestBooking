@@ -12,4 +12,5 @@ object LibsVersions {
     const val coil = "2.4.0"
     const val circle_indicator = "2.1.6"
     const val whynotimagecarousel = "2.1.0"
+    const val shimmer = "0.5.0"
 }
