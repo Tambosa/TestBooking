@@ -4,6 +4,8 @@ import com.example.core_network.BookingApi
 import com.example.core_network.Constants
 import com.example.feature_hotel.data.HotelRepoImpl
 import com.example.feature_hotel.domain.HotelRepo
+import com.example.feature_hotel_details.data.HotelDetailsRepoImpl
+import com.example.feature_hotel_details.domain.HotelDetailsRepo
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -36,5 +38,11 @@ object AppModule {
     @Singleton
     fun provideHotelRepo(): HotelRepo {
         return HotelRepoImpl(provideBookingApi())
+    }
+
+    @Provides
+    @Singleton
+    fun provideHotelDetailsRepo(): HotelDetailsRepo {
+        return HotelDetailsRepoImpl(provideBookingApi())
     }
 }

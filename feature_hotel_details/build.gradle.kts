@@ -51,16 +51,17 @@ dependencies {
     implementation(Libs.androidx_lifecycle_runtime_ktx)
 
     //Google Navigation
-    implementation (Libs.navigation_fragment)
-    implementation (Libs.navigation_ui)
+    implementation(Libs.navigation_fragment)
+    implementation(Libs.navigation_ui)
 
-    //coil
-    implementation (Libs.coil)
+    //adapter delegates
+    implementation(Libs.adapter_delegates)
+    implementation(Libs.adapter_delegates_viewbinding)
 
     //3rd party
-    implementation (Libs.circle_indicator)
-    implementation (Libs.whynotimagecarousel)
-    implementation (Libs.shimmer)
+    implementation(Libs.circle_indicator)
+    implementation(Libs.whynotimagecarousel)
+    implementation(Libs.shimmer)
 
     implementation(Libs.androidx_ktx)
     implementation(Libs.androidx_appcompat)

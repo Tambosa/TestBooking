@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
 
         setupNavController()
         setSupportActionBar(binding.toolbar)
+        supportActionBar?.setHomeAsUpIndicator(com.example.core_ui.R.drawable.baseline_arrow_back_24)
     }
 
     private fun setupNavController() {

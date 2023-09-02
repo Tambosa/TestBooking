@@ -13,4 +13,5 @@ object LibsVersions {
     const val circle_indicator = "2.1.6"
     const val whynotimagecarousel = "2.1.0"
     const val shimmer = "0.5.0"
+    const val adapter_delegates = "4.3.2"
 }

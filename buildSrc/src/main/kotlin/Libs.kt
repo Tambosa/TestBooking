@@ -24,6 +24,13 @@ object Libs {
         "androidx.navigation:navigation-fragment-ktx:${LibsVersions.navigation}"
     const val navigation_ui = "androidx.navigation:navigation-ui-ktx:${LibsVersions.navigation}"
 
+    //adapter delegates
+    const val adapter_delegates =
+        "com.hannesdorfmann:adapterdelegates4-kotlin-dsl:${LibsVersions.adapter_delegates}"
+    const val adapter_delegates_viewbinding =
+        "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:${LibsVersions.adapter_delegates}"
+
+
     //coil
     const val coil = "io.coil-kt:coil:${LibsVersions.coil}"
 
