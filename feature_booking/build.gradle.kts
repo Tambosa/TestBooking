@@ -62,6 +62,7 @@ dependencies {
     implementation(Libs.circle_indicator)
     implementation(Libs.whynotimagecarousel)
     implementation(Libs.shimmer)
+    implementation ("ru.tinkoff.decoro:decoro:1.5.2")
 
     implementation(Libs.androidx_ktx)
     implementation(Libs.androidx_appcompat)
