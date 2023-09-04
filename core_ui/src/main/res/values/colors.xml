@@ -11,4 +11,5 @@
     <color name="background_main">#FFFFFF</color>
     <color name="background_container">#FBFBFC</color>
     <color name="shimmer_color">#C2C2C2</color>
+    <color name="error_color">#EB5757</color>
 </resources>

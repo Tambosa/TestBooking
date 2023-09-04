@@ -1,5 +1,6 @@
 package com.example.feature_booking
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -51,7 +52,19 @@ class BookingFragment : Fragment() {
         observeViewModel()
         initRecycler()
         viewmodel.getHotelDetails()
-        binding.btnPay.setOnClickListener { navigateDown() }
+        binding.btnPay.setOnClickListener {
+            if (binding.phoneInput.text.isNullOrBlank()) {
+                binding.buyerPhoneNumberLayout.boxStrokeColor =
+                    resources.getColor(R.color.error_color, null)
+                binding.phoneInput.requestFocus()
+            } else if (binding.emailInput.text.isNullOrBlank()) {
+                binding.buyerEmailLayout.boxStrokeColor =
+                    resources.getColor(R.color.error_color, null)
+                binding.emailInput.requestFocus()
+            } else {
+                navigateDown()
+            }
+        }
     }
 
     private fun navigateDown() {
@@ -94,7 +107,10 @@ class BookingFragment : Fragment() {
                 if (text != null) {
                     if (!text.isPhoneNumber()) binding.phoneInput.error =
                         getString(R.string.input_error)
-                    else binding.phoneInput.error = null
+                    else {
+                        binding.buyerPhoneNumberLayout.boxStrokeColor = Color.GREEN
+                        binding.phoneInput.error = null
+                    }
                 }
             }
 
@@ -102,7 +118,10 @@ class BookingFragment : Fragment() {
                 if (text != null) {
                     if (!text.isValidEmail()) binding.emailInput.error =
                         getString(R.string.input_error)
-                    else binding.emailInput.error = null
+                    else {
+                        binding.buyerEmailLayout.boxStrokeColor = Color.GREEN
+                        binding.emailInput.error = null
+                    }
                 }
             }
 
