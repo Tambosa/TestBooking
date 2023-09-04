@@ -39,59 +39,58 @@ fun touristAdapterDelegate() =
                 1 -> binding.touristNumber.text = "Второй турист"
                 2 -> binding.touristNumber.text = "Третий турист"
                 else -> binding.touristNumber.text = "Еще один турист"
-
             }
 
             with(binding.touristNameInput) {
                 addTextChangedListener {
+                    item.name = it.toString()
                     if (it.isNullOrBlank()) {
-                        this.error =
-                            getString(R.string.input_error)
+                        this.error = getString(R.string.input_error)
                     } else this.error = null
                 }
             }
 
             with(binding.touristSurnameInput) {
+                item.surname = it.toString()
                 addTextChangedListener {
                     if (it.isNullOrBlank()) {
-                        this.error =
-                            getString(R.string.input_error)
+                        this.error = getString(R.string.input_error)
                     } else this.error = null
                 }
             }
 
             with(binding.touristDateOfBirthInput) {
+                item.dateOfBirth = it.toString()
                 addTextChangedListener {
                     if (it.isNullOrBlank()) {
-                        this.error =
-                            getString(R.string.input_error)
+                        this.error = getString(R.string.input_error)
                     } else this.error = null
                 }
             }
 
             with(binding.touristCitizenshipInput) {
+                item.citizenship = it.toString()
                 addTextChangedListener {
                     if (it.isNullOrBlank()) {
-                        this.error =
-                            getString(R.string.input_error)
+                        this.error = getString(R.string.input_error)
                     } else this.error = null
                 }
             }
 
             with(binding.touristPassportNumberInput) {
+                item.passportNumber = it.toString()
                 addTextChangedListener {
                     if (it.isNullOrBlank()) {
-                        this.error =
-                            getString(R.string.input_error)
+                        this.error = getString(R.string.input_error)
                     } else this.error = null
                 }
             }
 
             with(binding.touristPassportExpireDateInput) {
+                item.passportExpireDate = it.toString()
                 addTextChangedListener {
                     if (it.isNullOrBlank()) {
-                        this.error =
-                            getString(R.string.input_error)
+                        this.error = getString(R.string.input_error)
                     } else this.error = null
                 }
             }
@@ -115,4 +114,3 @@ fun touristAdapterDelegate() =
             }
         }
     }
-

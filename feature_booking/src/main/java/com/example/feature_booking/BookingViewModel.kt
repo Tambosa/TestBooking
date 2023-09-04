@@ -36,7 +36,7 @@ class BookingViewModel @Inject constructor(private val repo: ReservationRepo) : 
 
     fun addTourist() {
         _touristList.value = _touristList.value?.apply {
-            this.add(_touristList.value!!.size - 2, Tourist())
+            this.add(_touristList.value!!.size - 1, Tourist())
         }
     }
 }
