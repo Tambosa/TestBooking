@@ -11,6 +11,7 @@
         <action
             android:id="@+id/action_HotelFragment_to_HotelDetailsFragment"
             app:destination="@id/navigation_hotel_details" />
+        <deepLink app:uri="@string/deeplink_hotel" />
     </fragment>
 
     <fragment
@@ -32,9 +33,19 @@
         android:id="@+id/navigation_booking"
         android:name="com.example.feature_booking.BookingFragment"
         android:label="@string/booking">
-        <!--        <action-->
-        <!--            android:id="@+id/action_blankFragment_to_blankFragment2"-->
-        <!--            app:destination="@id/blankFragment2" />-->
+        <action
+            android:id="@+id/action_BookingFragment_to_PaymentReceivedFragment"
+            app:destination="@id/navigation_payment_received" />
         <deepLink app:uri="@string/deeplink_booking" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_payment_received"
+        android:name="com.example.feature_payment_received.FragmentPaymentReceived"
+        android:label="@string/payment_received">
+        <action
+            android:id="@+id/action_paymentReceivedFragment_to_HotelFragment"
+            app:destination="@id/navigation_hotel" />
+        <deepLink app:uri="@string/deeplink_payment_received" />
     </fragment>
 </navigation>

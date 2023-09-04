@@ -46,6 +46,7 @@ dependencies {
     implementation(project(":feature_hotel"))
     implementation(project(":feature_hotel_details"))
     implementation(project(":feature_booking"))
+    implementation(project(":feature_payment_received"))
 
     //retrofit
     implementation(Libs.retrofit)

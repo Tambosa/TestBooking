@@ -2,4 +2,6 @@
 <resources>
     <string name="deeplink_hotel_details">App://example.app/hotel_details</string>
     <string name="deeplink_booking">App://example.app/booking</string>
+    <string name="deeplink_payment_received">App://example.app/payment_received</string>
+    <string name="deeplink_hotel">App://example.app/hotel</string>
 </resources>

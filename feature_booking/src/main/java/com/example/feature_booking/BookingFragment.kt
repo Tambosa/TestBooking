@@ -5,9 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toUri
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.NavDeepLinkRequest
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.core_ui.R
@@ -48,6 +51,14 @@ class BookingFragment : Fragment() {
         observeViewModel()
         initRecycler()
         viewmodel.getHotelDetails()
+        binding.btnPay.setOnClickListener { navigateDown() }
+    }
+
+    private fun navigateDown() {
+        val request = NavDeepLinkRequest.Builder
+            .fromUri(resources.getString(R.string.deeplink_payment_received).toUri())
+            .build()
+        findNavController().navigate(request)
     }
 
     private fun initRecycler() {

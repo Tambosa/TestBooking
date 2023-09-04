@@ -1,6 +1,7 @@
 <resources>
     <string name="title_hotel">Отель</string>
     <string name="booking">Бронирование</string>
+    <string name="payment_received">Заказ оплачен</string>
     <string name="about_hotel">Об отеле</string>
     <string name="button_booking">К выбору номера</string>
     <string name="facilities">Удобства</string>
@@ -11,7 +12,10 @@
     <string name="deatils_about_room">Подробнее о номере</string>
     <string name="price_with_ruble">%1$s ₽</string>
     <string name="choose_room">Выбрать номер</string>
-
+    <string name="supe_r">Супер!</string>
+    <string name="your_order_was_received">Ваш заказ принят в работу</string>
+    <string name="party_popper_emoji">&#127881;</string>
+    <string name="order_confirmation_details">Подтверждение заказа №104893 может занять некоторое время (от 1 часа до суток). Как только мы получим ответ от туроператора, вам на почту придет уведомление.</string>
     <string name="flight_from">Вылет из</string>
     <string name="country_city">Страна, город</string>
     <string name="dates">Даты</string>
