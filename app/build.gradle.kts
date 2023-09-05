@@ -35,9 +35,19 @@ android {
     kotlinOptions {
         jvmTarget = ConfigData.jvmTarget
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
+    implementation(project(":core_network"))
+    implementation(project(":core_ui"))
+    implementation(project(":feature_hotel"))
+    implementation(project(":feature_hotel_details"))
+    implementation(project(":feature_booking"))
+    implementation(project(":feature_payment_received"))
+
     //retrofit
     implementation(Libs.retrofit)
     implementation(Libs.converter_gson)
@@ -52,6 +62,10 @@ dependencies {
     // Coroutine Lifecycle Scopes
     implementation(Libs.androidx_lifecycle_viewmodel_ktx)
     implementation(Libs.androidx_lifecycle_runtime_ktx)
+
+    //Google Navigation
+    implementation (Libs.navigation_fragment)
+    implementation (Libs.navigation_ui)
 
     implementation(Libs.androidx_ktx)
     implementation(Libs.androidx_appcompat)

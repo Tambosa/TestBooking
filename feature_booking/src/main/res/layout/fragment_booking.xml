@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/margin_container_side"
+    android:paddingEnd="@dimen/margin_container_side">
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="8dp"
+            app:cardCornerRadius="5dp"
+            app:strokeWidth="0dp"
+            card_view:cardElevation="0dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/shimmer_color" />
+        </com.google.android.material.card.MaterialCardView>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/star_rate_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                app:cardCornerRadius="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:strokeWidth="0dp"
+                card_view:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/background_star_rate"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="5dp">
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/baseline_star_rate_24"
+                        app:tint="@color/text_star_rate" />
+
+                    <TextView
+                        android:id="@+id/rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_star_rate"
+                        android:textSize="@dimen/text_size_common"
+                        app:fontWeight="@dimen/text_weight_medium" />
+
+                    <TextView
+                        android:id="@+id/rating_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="3dp"
+                        android:textColor="@color/text_star_rate"
+                        android:textSize="@dimen/text_size_common"
+                        app:fontWeight="@dimen/text_weight_medium" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/hotel_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:textColor="@color/text_main"
+                android:textSize="@dimen/text_size_header"
+                app:fontWeight="@dimen/text_weight_medium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/star_rate_container" />
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:textColor="@color/text_accent"
+                android:textSize="@dimen/text_size_common_small"
+                app:fontWeight="@dimen/text_weight_medium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hotel_name" />
+
+            <TextView
+                android:id="@+id/flight_from"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large"
+                android:text="@string/flight_from"
+                android:textColor="@color/text_light"
+                android:textSize="@dimen/text_size_common"
+                app:fontWeight="@dimen/text_weight_normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/address" />
+
+            <TextView
+                android:id="@+id/flight_from_api"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_main"
+                android:textSize="@dimen/text_size_common"
+                app:fontWeight="@dimen/text_weight_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/flight_from"
+                app:layout_constraintTop_toTopOf="@id/flight_from" />
+
+            <TextView
+                android:id="@+id/country_city"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/country_city"
+                android:textColor="@color/text_light"
+                android:textSize="@dimen/text_size_common"
+                app:fontWeight="@dimen/text_weight_normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/flight_from_api" />
+
+            <TextView
+                android:id="@+id/country_city_api"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_main"
+                android:textSize="@dimen/text_size_common"
+                app:fontWeight="@dimen/text_weight_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/country_city"
+                app:layout_constraintTop_toTopOf="@id/country_city" />
+
+            <TextView
+                android:id="@+id/dates"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/dates"
+                android:textColor="@color/text_light"
+                android:textSize="@dimen/text_size_common"
+                app:fontWeight="@dimen/text_weight_normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/country_city_api" />
+
+            <TextView
+                android:id="@+id/dates_api"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_main"
+                android:textSize="@dimen/text_size_common"
+                app:fontWeight="@dimen/text_weight_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/dates"
+                app:layout_constraintTop_toTopOf="@id/dates" />
+
+            <TextView
+                android:id="@+id/number_of_nights"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/number_of_nights"
+                android:textColor="@color/text_light"
+                android:textSize="@dimen/text_size_common"
+                app:fontWeight="@dimen/text_weight_normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dates_api" />
+
+            <TextView
+                android:id="@+id/number_of_nights_api"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_main"
+                android:textSize="@dimen/text_size_common"
+                app:fontWeight="@dimen/text_weight_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/number_of_nights"
+                app:layout_constraintTop_toTopOf="@id/number_of_nights" />
+
+            <TextView
+                android:id="@+id/hotel"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/hotel"
+                android:textColor="@color/text_light"
+                android:textSize="@dimen/text_size_common"
+                app:fontWeight="@dimen/text_weight_normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/number_of_nights_api" />
+
+            <TextView
+                android:id="@+id/hotel_api"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_main"
+                android:textSize="@dimen/text_size_common"
+                app:fontWeight="@dimen/text_weight_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/hotel"
+                app:layout_constraintTop_toTopOf="@id/hotel" />
+
+            <TextView
+                android:id="@+id/room"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/room"
+                android:textColor="@color/text_light"
+                android:textSize="@dimen/text_size_common"
+                app:fontWeight="@dimen/text_weight_normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hotel_api" />
+
+            <TextView
+                android:id="@+id/room_api"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_main"
+                android:textSize="@dimen/text_size_common"
+                app:fontWeight="@dimen/text_weight_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/room"
+                app:layout_constraintTop_toTopOf="@id/room" />
+
+            <TextView
+                android:id="@+id/meals"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/meals"
+                android:textColor="@color/text_light"
+                android:textSize="@dimen/text_size_common"
+                app:fontWeight="@dimen/text_weight_normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/room_api" />
+
+            <TextView
+                android:id="@+id/meals_api"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_main"
+                android:textSize="@dimen/text_size_common"
+                app:fontWeight="@dimen/text_weight_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/meals"
+                app:layout_constraintTop_toTopOf="@id/meals" />
+
+            <TextView
+                android:id="@+id/information_about_buyer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large"
+                android:text="@string/information_about_buyer"
+                android:textColor="@color/text_main"
+                android:textSize="@dimen/text_size_header"
+                app:fontWeight="@dimen/text_weight_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/meals" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/buyer_phone_number_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@color/background_container"
+                android:hint="@string/phone_number"
+                app:boxStrokeWidth="0dp"
+                app:expandedHintEnabled="false"
+                app:hintTextColor="@color/text_light"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/information_about_buyer">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/phone_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/phone_number_hint"
+                    android:inputType="phone"
+                    android:textColor="@color/text_main"
+                    android:textSize="@dimen/text_size_common" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/buyer_email_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:background="@color/background_container"
+                android:hint="@string/email"
+                app:boxStrokeWidth="0dp"
+                app:expandedHintEnabled="false"
+                app:hintTextColor="@color/text_light"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/buyer_phone_number_layout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/email_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/text_main"
+                    android:textSize="@dimen/text_size_common" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/privacy_hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="@string/privacy_hint"
+                android:textColor="@color/text_light"
+                android:textSize="@dimen/text_size_common_small"
+                app:fontWeight="@dimen/text_weight_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/buyer_email_layout" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/tourist_recycler_view"
+                android:layout_marginTop="@dimen/margin_large"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/privacy_hint" />
+
+            <TextView
+                android:id="@+id/tour"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large"
+                android:text="@string/tour"
+                android:textColor="@color/text_light"
+                android:textSize="@dimen/text_size_common"
+                app:fontWeight="@dimen/text_weight_normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tourist_recycler_view" />
+
+            <TextView
+                android:id="@+id/tour_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/text_main"
+                android:textSize="@dimen/text_size_common"
+                app:fontWeight="@dimen/text_weight_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tour"
+                app:layout_constraintTop_toTopOf="@id/tour" />
+
+            <TextView
+                android:id="@+id/fuel"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/fuel_price"
+                android:textColor="@color/text_light"
+                android:textSize="@dimen/text_size_common"
+                app:fontWeight="@dimen/text_weight_normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tour" />
+
+            <TextView
+                android:id="@+id/fuel_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/text_main"
+                android:textSize="@dimen/text_size_common"
+                app:fontWeight="@dimen/text_weight_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/fuel"
+                app:layout_constraintTop_toTopOf="@id/fuel" />
+
+            <TextView
+                android:id="@+id/service"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/service_price"
+                android:textColor="@color/text_light"
+                android:textSize="@dimen/text_size_common"
+                app:fontWeight="@dimen/text_weight_normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fuel" />
+
+            <TextView
+                android:id="@+id/service_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/text_main"
+                android:textSize="@dimen/text_size_common"
+                app:fontWeight="@dimen/text_weight_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/service"
+                app:layout_constraintTop_toTopOf="@id/service" />
+
+            <TextView
+                android:id="@+id/total"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/total_price"
+                android:textColor="@color/text_light"
+                android:textSize="@dimen/text_size_common"
+                app:fontWeight="@dimen/text_weight_normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/service" />
+
+            <TextView
+                android:id="@+id/total_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/text_accent"
+                android:textSize="@dimen/text_size_common"
+                app:fontWeight="@dimen/text_weight_semi_bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/total"
+                app:layout_constraintTop_toTopOf="@id/total" />
+
+
+            <Button
+                android:id="@+id/btn_pay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginBottom="@dimen/margin_medium"
+                android:background="@drawable/rounded_corners_bg"
+                android:text="@string/pay"
+                android:textColor="@color/text_inverse"
+                android:textSize="@dimen/text_size_common"
+                app:backgroundTint="@color/background_accent"
+                app:fontWeight="@dimen/text_weight_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/total" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</LinearLayout>
