@@ -9,13 +9,29 @@ data class Tourist(
     var citizenship: String = "",
     var passportNumber: String = "",
     var passportExpireDate: String = "",
+)
+
+data class TouristDisplayable(
+    val tourist: Tourist,
+    var requiredFields: List<TouristRequiredFields> = listOf()
 ) : BookingDisplayableItem
 
-fun Tourist.isFilled() = (
-        name.isNotBlank()
-                && surname.isNotBlank()
-                && dateOfBirth.isNotBlank()
-                && citizenship.isNotBlank()
-                && passportNumber.isNotBlank()
-                && passportExpireDate.isNotBlank()
-        )
+enum class TouristRequiredFields {
+    NAME,
+    SURNAME,
+    DATE_OF_BIRTH,
+    CITIZENSHIP,
+    PASSPORT_NUMBER,
+    PASSPORT_EXPIRE_DATE,
+}
+
+fun Tourist.checkFields(): List<TouristRequiredFields> {
+    val requiredFields = mutableListOf<TouristRequiredFields>()
+    if (name.isBlank()) requiredFields.add(TouristRequiredFields.NAME)
+    if (surname.isBlank()) requiredFields.add(TouristRequiredFields.SURNAME)
+    if (dateOfBirth.isBlank()) requiredFields.add(TouristRequiredFields.DATE_OF_BIRTH)
+    if (citizenship.isBlank()) requiredFields.add(TouristRequiredFields.CITIZENSHIP)
+    if (passportNumber.isBlank()) requiredFields.add(TouristRequiredFields.PASSPORT_NUMBER)
+    if (passportExpireDate.isBlank()) requiredFields.add(TouristRequiredFields.PASSPORT_EXPIRE_DATE)
+    return requiredFields.toList()
+}

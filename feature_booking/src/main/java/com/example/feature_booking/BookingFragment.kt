@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
 import androidx.core.widget.addTextChangedListener
@@ -18,8 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.core_ui.R
 import com.example.feature_booking.databinding.FragmentBookingBinding
 import com.example.feature_booking.domain.BookingDisplayableItem
-import com.example.feature_booking.domain.entity.Tourist
-import com.example.feature_booking.domain.entity.isFilled
+import com.example.feature_booking.domain.entity.TouristDisplayable
 import dagger.hilt.android.AndroidEntryPoint
 import ru.tinkoff.decoro.MaskImpl
 import ru.tinkoff.decoro.slots.PredefinedSlots
@@ -71,15 +69,9 @@ class BookingFragment : Fragment() {
     }
 
     private fun touristInfoFilled(): Boolean {
-        bookingAdapter.items?.forEach {
-            if (it is Tourist) {
-                if (!it.isFilled())
-                    Toast.makeText(
-                        requireContext(),
-                        "Информация о туристе не заполнена",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                return it.isFilled()
+        bookingAdapter.items?.forEach { item ->
+            if (item is TouristDisplayable) {
+                bookingAdapter.items?.let { return viewmodel.updateTouristList(it) }
             }
         }
         return true
