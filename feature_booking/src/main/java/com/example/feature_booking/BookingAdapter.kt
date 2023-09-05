@@ -1,5 +1,6 @@
 package com.example.feature_booking
 
+import android.app.DatePickerDialog
 import android.view.View
 import androidx.core.widget.addTextChangedListener
 import androidx.transition.AutoTransition
@@ -13,6 +14,7 @@ import com.example.feature_booking.domain.entity.TouristDisplayable
 import com.example.feature_booking.domain.entity.TouristRequiredFields
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
+import java.util.Calendar
 
 class BookingAdapter(onAdd: () -> Unit) :
     ListDelegationAdapter<List<BookingDisplayableItem>>(
@@ -120,6 +122,20 @@ fun touristAdapterDelegate() =
                         binding.touristDateOfBirth.boxBackgroundColor =
                             getColor(R.color.error_color)
                     }
+                }
+                setOnClickListener {
+                    val c = Calendar.getInstance()
+                    val datePickerDialog = DatePickerDialog(
+                        context,
+                        { _, year, monthOfYear, dayOfMonth ->
+                            val dat = (dayOfMonth.toString() + "-" + (monthOfYear + 1) + "-" + year)
+                            setText(dat)
+                        },
+                        c.get(Calendar.YEAR),
+                        c.get(Calendar.MONTH),
+                        c.get(Calendar.DAY_OF_MONTH)
+                    )
+                    datePickerDialog.show()
                 }
             }
 
