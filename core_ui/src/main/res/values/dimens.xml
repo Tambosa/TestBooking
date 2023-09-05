@@ -9,4 +9,9 @@
     <dimen name="text_weight_normal">400</dimen>
     <dimen name="text_weight_medium">500</dimen>
     <dimen name="text_weight_semi_bold">600</dimen>
+
+    <dimen name="margin_container_side">16dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_large">30dp</dimen>
 </resources>

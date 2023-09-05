@@ -4,8 +4,8 @@
     xmlns:card_view="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="10dp"
-    android:paddingBottom="10dp">
+    android:paddingTop="@dimen/margin_medium"
+    android:paddingBottom="@dimen/margin_medium">
 
 
     <com.google.android.material.card.MaterialCardView
@@ -34,7 +34,7 @@
         android:id="@+id/room_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="@dimen/margin_small"
         android:textColor="@color/text_main"
         android:textSize="@dimen/text_size_common"
         app:fontWeight="@dimen/text_weight_medium"
@@ -56,6 +56,7 @@
         android:id="@+id/btn_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
         app:cardBackgroundColor="@color/background_transparent_accent"
         app:cardCornerRadius="5dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -95,7 +96,7 @@
         android:id="@+id/price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="@dimen/margin_medium"
         android:textColor="@color/text_main"
         android:textSize="@dimen/text_size_price"
         app:fontWeight="@dimen/text_weight_semi_bold"
@@ -117,8 +118,8 @@
         android:id="@+id/btn_choose_room"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginBottom="@dimen/margin_medium"
         android:background="@drawable/rounded_corners_bg"
         android:text="@string/choose_room"
         android:textColor="@color/text_inverse"

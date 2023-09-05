@@ -32,7 +32,6 @@ class BookingViewModel @Inject constructor(private val repo: ReservationRepo) : 
         viewModelScope.launch {
             _isLoading.value = true
             _data.value = repo.getReservation()
-            delay(1000)
             _isLoading.value = false
         }
     }

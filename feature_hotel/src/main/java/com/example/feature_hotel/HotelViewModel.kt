@@ -23,7 +23,6 @@ class HotelViewModel @Inject constructor(private val repo: HotelRepo) : ViewMode
         viewModelScope.launch {
             _isLoading.value = true
             _data.value = repo.getHotel()
-            delay(1000)
             _isLoading.value = false
         }
     }
