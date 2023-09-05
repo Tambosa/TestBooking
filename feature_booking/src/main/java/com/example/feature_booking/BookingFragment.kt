@@ -55,11 +55,11 @@ class BookingFragment : Fragment() {
         viewmodel.getHotelDetails()
         binding.btnPay.setOnClickListener {
             if (binding.phoneInput.text.isNullOrBlank()) {
-                binding.buyerPhoneNumberLayout.boxStrokeColor =
+                binding.buyerPhoneNumberLayout.boxBackgroundColor =
                     resources.getColor(R.color.error_color, null)
                 binding.phoneInput.requestFocus()
             } else if (binding.emailInput.text.isNullOrBlank()) {
-                binding.buyerEmailLayout.boxStrokeColor =
+                binding.buyerEmailLayout.boxBackgroundColor =
                     resources.getColor(R.color.error_color, null)
                 binding.emailInput.requestFocus()
             } else if (touristInfoFilled()) {
@@ -118,7 +118,7 @@ class BookingFragment : Fragment() {
                     if (!text.isPhoneNumber()) binding.phoneInput.error =
                         getString(R.string.input_error)
                     else {
-                        binding.buyerPhoneNumberLayout.boxStrokeColor = Color.GREEN
+                        binding.buyerPhoneNumberLayout.boxBackgroundColor = Color.TRANSPARENT
                         binding.phoneInput.error = null
                     }
                 }
@@ -129,7 +129,7 @@ class BookingFragment : Fragment() {
                     if (!text.isValidEmail()) binding.emailInput.error =
                         getString(R.string.input_error)
                     else {
-                        binding.buyerEmailLayout.boxStrokeColor = Color.GREEN
+                        binding.buyerEmailLayout.boxBackgroundColor = Color.TRANSPARENT
                         binding.emailInput.error = null
                     }
                 }

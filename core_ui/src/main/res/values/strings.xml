@@ -28,7 +28,8 @@
     <string name="email">Почта</string>
     <string name="phone_number_hint">+7 (***) ***-**-**</string>
     <string name="privacy_hint">Эти данные никому не передаются. После оплаты мы вышли чек на указанный вами номер и почту</string>
-    <string name="input_error">Обязательное поле</string>
+    <string name="input_empty">Обязательное поле</string>
+    <string name="input_error">Некорректные данные</string>
     <string name="pay">Оплатить</string>
     <string name="tour">Тур</string>
     <string name="fuel_price">Топливный сбор</string>
